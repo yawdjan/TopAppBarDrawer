@@ -196,5 +196,15 @@ private fun Scrim(
     }
 }
 
+sealed class DragAnchorsAt {
+    data object Top : DragAnchorsAt()
+    data object Bottom : DragAnchorsAt()
+}
+
+data class iconItem (
+    val name: String,
+    val id: Int
+)
+
 private fun calculateFraction(a: Float, b: Float, pos: Float) =
     ((pos - a) / (b - a)).coerceIn(0f, 1f)
